@@ -14,10 +14,18 @@ body {
 .nav{
     display: flex;
     justify-content: space-between;
+    position: sticky;
+    top: 0px;
+    padding: 10px;
+    background-color: #ffffff9d;
+    backdrop-filter: blur(20px);
 }
+/**Logo*/
 .nav__logo img{
     max-width: 150px;
 }
+
+/**Burger Menu*/
 .burger__menu-checkbox{
     display: none;
 }
@@ -38,7 +46,7 @@ body {
     border-radius: 5px;
     transform-origin: left center;
     opacity: 1;
-    transition: .25s ease-in-out;
+    transition: .1s ease-in-out;
     left: 0;
     transform: rotate(0deg);
 }
@@ -63,6 +71,9 @@ body {
     left: 5px;
     transform: rotate(-45deg);
 }
+
+
+/**Nav menu*/
 .nav__menu{
     display: flex;
     gap: 20px;
@@ -72,7 +83,7 @@ body {
     font-size: clamp(1rem, 0.875rem + 0.4vw, 1.25rem);
     color: #000;
     font-weight: 400;
-    padding: 3px 5px;
+    padding: 3px 10px;
     border-radius: 5px;
     &:hover{
         background-color: #B9FF66;
@@ -87,6 +98,79 @@ body {
 
 
 
+.introduction{
+    margin-top: 5rem;
+    display: flex;
+    gap: 30px;
+}
+.introduction .introduction__text{
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.introduction__text h1{
+    font-size: clamp(1.25rem, 0.6875rem + 4vw, 3.5rem);
+}
+.introduction__text__img{
+    display: block;
+    img{
+        width: 100%;
+        height: auto;
+    }
+}
+.introduction .introduction__img{
+    flex-basis: 50%;
+    img{
+        width: 100%;
+        height: auto;
+    }
+}
+
+.introduction__text__info-para{
+    width: 80%;
+    font-size: 1rem;
+}
+.introduction__text__button button{
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    background-color: #191a23;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s;
+    backface-visibility: hidden;
+}
+.introduction-btn:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgb(0,0,0,.2);
+}
+.introduction-btn:active{
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgb(0,0,0,.2);
+}
+
+.introduction-btn::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #191a23;
+    border-radius: 10px;
+    display: inline-block;
+    transition: all .3s;
+    opacity: 1;
+    z-index: -999;
+}
+.introduction-btn:hover::after{
+    transform: scaleX(1.2) scaleY(1.5);
+    opacity: 0;
+}
 
 
 
@@ -103,12 +187,21 @@ body {
 
 
 
-@media (max-width:830px){
+
+
+
+
+
+
+@media (max-width:880px){
     .nav__menu{
-        gap: 5px;
+        gap: 10px;
     }
     .request_quote{
         padding: 3px 5px !important;
+    }
+    .nav__menu .menu__items{
+        padding: 3px 5px;
     }
 }
 
@@ -118,7 +211,7 @@ body {
         position: fixed;
         right: 2%;
         flex-direction: column;
-        padding: 5px 10px 15px 10px;
+        padding: 10px 10px 35px 10px;
     }
     .burger__menu{
         display: block;
@@ -128,19 +221,29 @@ body {
     }
     .burger__menu-checkbox:checked + .nav__menu .menu__items{
         display: block;
+        font-size: 1.5rem;
     }
     .burger__menu-checkbox:checked + .nav__menu {
         width: 300px;
         height: 400px;
-        background-color: #ffffff9f;
-        backdrop-filter: blur(10px);
         justify-content: space-between;
         align-items: center;
-        border-radius: 10px;
+        border-radius: 20px;
         border: 1px solid rgba(128, 128, 128, 0.534);
+        background: rgba(255, 255, 255, 0.952);
+        backdrop-filter: blur(10px);
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.342);
+        z-index: 999;
+        
     }
     .burger__menu-checkbox:checked + .nav__menu .burger__menu{
         align-self: flex-end;
     }
+
+
+
+
+
 }
+
 
