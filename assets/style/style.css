@@ -226,123 +226,111 @@ body {
 
 
 
-
 /* *    Main    */
 
-main{
+.services-heading{
+    margin-top:50px;
     padding: 40px;
-}
-
-.services{
-    margin-top: 5rem;
-}
-.services__text{
     display: flex;
-    gap: 50px;
-}
-.services__text-heading{
-    font-size: 32px;
-    padding: 3px 5px;
-    background-color: #B9FF66;
-    border-radius: 10px;
-    height: max-content;
-}
-.services__text-para{
-    width: 55%;
+    justify-content: flex-start;
+    align-items: center;
     align-content: center;
-    font-size: 1.5rem;
+    gap: 40px;
+}
+.services-heading h2{
+    font-size: clamp(1.25rem, 0.9375rem + 1.6667vw, 2.5rem);
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: #B9FF66;
+}
+.services-heading p{
+    max-width: 60%;
+    min-width: 50%;
+    font-size: clamp(0.875rem, 0.7813rem + 0.5vw, 1.25rem);
 }
 
-.services__container{
-    margin-top: 50px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(470px, 1fr));
-    grid-template-rows: auto;
-    gap: 30px;
-}
-.services__card{
+.services-container{
     padding: 40px;
-    border-radius: 30px;
-    border: 1px solid #191a23;
-    display: flex;
-    box-shadow: rgb(0, 0, 0) 0px 5px 1px 0px;
-
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(390px, 1fr));
+    gap: 50px;
+    justify-content: center;
 }
-.services__card__text{
-    width: 50%;
+.services-container__card{
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow:  #191a23 0px 5px 1px;
+    border: 1px solid #191a23;
+    gap: 20px;
+}
+.services-container__card .card__text{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
-.services__card__text-heading h3{
+.card__text-heading h3{
     font-size: clamp(1rem, 0.75rem + 1.3333vw, 2rem);
-    padding: 2px 4px;
-    width: max-content;
-    border-radius: 5px;
-}
-.services__card__text-button{
-    transition: all 0.5s ease-in-out;
-}
-
-.services__card__text-button a{
-    padding: 10px;
-    width: max-content;
+    padding: 5px;
     border-radius: 10px;
+    margin: 1px 0;
+}
+.card__text-button{
     display: flex;
-    gap: 10px;
     align-items: center;
-
-}
-.services__card__text-button a span{
-    color: #000;
-    font-size: clamp(0.75rem, 0.5rem + 1.3333vw, 1.75rem);
-}
-.services__card__text-button:hover{
-    scale: 1.1;
-}
-.services__card__text-button span{
-    font-size: clamp(0.75rem, 0.685rem + 0.3467vw, 1.01rem);
+    justify-content: flex-start;
+    gap: 10px;
 }
 
-.services__card__text-button img{
-    transform: rotate(0deg);
-    transition: all 0.5s ease-in-out;
+.card__text-button a{
+    width: 100%;
+    font-size: clamp(1rem, 0.875rem + 0.6667vw, 1.5rem);
+    color: #191a23;
 }
-.services__card__text-button:hover img{
-    transform: rotate(33deg);
-} 
 
-.services__card__illustration{
+.card__text-button img{
+    max-width: 20%;
+    transition: all 0.5s;
+}
+.card__text-button:hover img{
+    transform: rotate(30deg);
+}
+
+.services-container__card .card__img{
     width: 50%;
 }
-.services__card__illustration img{
+.services-container__card .card__img img{
     width: 100%;
     height: auto;
 }
-
-.services__card1, .services__card4{
+:where(.card1, .card3){
     background-color: #f3f3f3;
 }
-.services__card1 h3, .services__card4 h3{
+:where(.card2, .card5){
     background-color: #B9FF66;
 }
-
-.services__card2, .services__card5{
-    background-color: #B9FF66;
-}
-.services__card2 h3, .services__card5 h3{
-    background-color: #fff;
-}
-
-.services__card3, .services__card6{
+:where(.card3, .card6){
     background-color: #191a23;
 }
-.services__card3 h3, .services__card6 h3{
-    background-color: #fff;
-}
-.services__card3 #link3, .services__card6 #link6{
+:is(.card3, .card6) a {
     color: #fff;
 }
+
+:is(.card1, .card4, .card6) h3 {
+    background-color: #B9FF66;
+}
+:is(.card2, .card3, .card5) h3 {
+    background-color: #fff;
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -439,16 +427,6 @@ main{
 
 
     /* *Main */
-
-    .services__text{
-        flex-direction: column;
-        gap: 30px;
-        align-items: center;
-    }
-    .services__text-para{
-        width: 100%;
-        text-align: center;
-    }
 
 
 }
