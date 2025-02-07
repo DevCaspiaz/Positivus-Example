@@ -14,9 +14,10 @@ body {
     display: flex;
     justify-content: space-between;
     align-content: center;
-    position: sticky;
+    position: fixed;
+    width: 100%;
     top: 0px;
-    padding: 20px 10px;
+    padding: 20px 40px;
     background-color: #ffffffc5;
     box-shadow: rgba(14, 63, 126, 0.06) 0px 0px 0px 1px, rgba(42, 51, 70, 0.03) 0px 1px 1px -0.5px, rgba(42, 51, 70, 0.04) 0px 2px 2px -1px, rgba(42, 51, 70, 0.04) 0px 3px 3px -1.5px, rgba(42, 51, 70, 0.03) 0px 5px 5px -2.5px, rgba(42, 51, 70, 0.03) 0px 10px 10px -5px, rgba(42, 51, 70, 0.03) 0px 24px 24px -8px;
     z-index: 999;
@@ -102,12 +103,13 @@ body {
 
 .introduction{
     margin-top: 5rem;
-    padding: 20px;
+    padding: 40px;
     display: flex;
-    gap: 30px;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 .introduction .introduction__text{
-    flex-basis: 50%;
+    width: 35%;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -115,7 +117,6 @@ body {
 
 .introduction__text h1{
     font-size: clamp(2.1rem, 0.6875rem + 4vw, 3.5rem);
-    width: 90%;
 }
 .introduction__text__img{
     display: none;
@@ -125,7 +126,7 @@ body {
     }
 }
 .introduction .introduction__img{
-    flex-basis: 50%;
+    width: 40%;;
     img{
         width: 100%;
         height: auto;
@@ -133,8 +134,8 @@ body {
 }
 
 .introduction__text__info-para{
-    width: 80%;
-    font-size: 1rem;
+    width: 95%;
+    font-size: 1.2rem;
 }
 .introduction__text__button button{
     display: inline-block;
@@ -147,6 +148,8 @@ body {
     position: relative;
     transition: all 0.3s;
     backface-visibility: hidden;
+    font-size: 1.3rem;
+    font-family: "Space Grotesk";
 }
 .introduction-btn:hover{
     transform: translateY(-3px);
@@ -180,8 +183,8 @@ body {
 /* *Ads Section */
 
 .ads{
-    margin-top: 100px;
-    padding: 20px;
+    margin-top: 2rem;
+    padding: 40px;
     display: grid;
     grid-template-columns: repeat( auto-fit, minmax(100px, 1fr) );
     grid-template-rows: auto;
@@ -222,22 +225,136 @@ body {
 
 
 
+
+
 /* *    Main    */
 
+main{
+    padding: 40px;
+}
+
+.services{
+    margin-top: 5rem;
+}
+.services__text{
+    display: flex;
+    gap: 50px;
+}
+.services__text-heading{
+    font-size: 32px;
+    padding: 3px 5px;
+    background-color: #B9FF66;
+    border-radius: 10px;
+    height: max-content;
+}
+.services__text-para{
+    width: 55%;
+    align-content: center;
+    font-size: 1.5rem;
+}
+
+.services__container{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(470px, 1fr));
+    grid-template-rows: auto;
+    gap: 30px;
+}
+.services__card{
+    padding: 40px;
+    border-radius: 30px;
+    border: 1px solid #191a23;
+    display: flex;
+    box-shadow: rgb(0, 0, 0) 0px 5px 1px 0px;
+
+}
+.services__card__text{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.services__card__text-heading h3{
+    font-size: clamp(1rem, 0.75rem + 1.3333vw, 2rem);
+    padding: 2px 4px;
+    width: max-content;
+    border-radius: 5px;
+}
+.services__card__text-button{
+    transition: all 0.5s ease-in-out;
+}
+
+.services__card__text-button a{
+    padding: 10px;
+    width: max-content;
+    border-radius: 10px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+}
+.services__card__text-button a span{
+    color: #000;
+    font-size: clamp(0.75rem, 0.5rem + 1.3333vw, 1.75rem);
+}
+.services__card__text-button:hover{
+    scale: 1.1;
+}
+.services__card__text-button span{
+    font-size: clamp(0.75rem, 0.685rem + 0.3467vw, 1.01rem);
+}
+
+.services__card__text-button img{
+    transform: rotate(0deg);
+    transition: all 0.5s ease-in-out;
+}
+.services__card__text-button:hover img{
+    transform: rotate(33deg);
+} 
+
+.services__card__illustration{
+    width: 50%;
+}
+.services__card__illustration img{
+    width: 100%;
+    height: auto;
+}
+
+.services__card1, .services__card4{
+    background-color: #f3f3f3;
+}
+.services__card1 h3, .services__card4 h3{
+    background-color: #B9FF66;
+}
+
+.services__card2, .services__card5{
+    background-color: #B9FF66;
+}
+.services__card2 h3, .services__card5 h3{
+    background-color: #fff;
+}
+
+.services__card3, .services__card6{
+    background-color: #191a23;
+}
+.services__card3 h3, .services__card6 h3{
+    background-color: #fff;
+}
+.services__card3 #link3, .services__card6 #link6{
+    color: #fff;
+}
 
 
 
 
 
 
-
-
-
-
-
-
-@media (max-width:880px){
+@media (max-width:930px){
     /* Navigation */
+
+    .nav{
+        padding: 20px;
+    }
     .nav__menu{
         gap: 10px;
     }
@@ -250,11 +367,12 @@ body {
 }
 
 
-@media (max-width:769px){
+@media (max-width:768px){
     
     .nav__menu{
-        position: fixed;
+        position: absolute;
         right: 2%;
+        top: 15%;
         flex-direction: column;
         padding: 10px 10px 35px 10px;
     }
@@ -308,10 +426,31 @@ body {
         flex-basis: 0;
         display: none;
     }
-    /* *Responsive of Header */
+    .introduction__text__button{
+        display: block;
+        margin: 0 auto;
+        width: 90%;
+    }
+    .introduction__text__button button{
+        width: 100%;
+    }
+    /* *Responsive of Header done */
 
 
-    
+
+    /* *Main */
+
+    .services__text{
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+    .services__text-para{
+        width: 100%;
+        text-align: center;
+    }
+
+
 }
 
 
