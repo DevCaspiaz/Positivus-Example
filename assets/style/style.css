@@ -101,14 +101,14 @@ body {
 
 
 
-.introduction{
+.introduction, .proposal{
     margin-top: 5rem;
-    padding: 40px;
+    margin: 40px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
 }
-.introduction .introduction__text{
+:is(.introduction__text,.proposal__text){
     width: 35%;
     display: flex;
     flex-direction: column;
@@ -137,7 +137,7 @@ body {
     width: 95%;
     font-size: 1.2rem;
 }
-.introduction__text__button button{
+.btn-box button{
     display: inline-block;
     padding: 10px 20px;
     border: none;
@@ -151,16 +151,16 @@ body {
     font-size: 1.3rem;
     font-family: "Space Grotesk";
 }
-.introduction-btn:hover{
+.btn-click:hover{
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgb(0,0,0,.2);
 }
-.introduction-btn:active{
+.btn-click:active{
     transform: translateY(-1px);
     box-shadow: 0 5px 10px rgb(0,0,0,.2);
 }
 
-.introduction-btn::after{
+.btn-click::after{
     content: "";
     width: 100%;
     height: 100%;
@@ -174,7 +174,7 @@ body {
     opacity: 1;
     z-index: -999;
 }
-.introduction-btn:hover::after{
+.btn-click:hover::after{
     transform: scaleX(1.2) scaleY(1.5);
     opacity: 0;
 }
@@ -184,7 +184,7 @@ body {
 
 .ads{
     margin-top: 2rem;
-    padding: 40px;
+    margin: 40px;
     display: grid;
     grid-template-columns: repeat( auto-fit, minmax(100px, 1fr) );
     grid-template-rows: auto;
@@ -325,7 +325,99 @@ body {
 }
 
 
+.proposal{
+    padding: 10px;
+    background-color: #f3f3f3;
+    border-radius: 15px;
+    height: 300px;
+    align-items: center;
+    justify-content: space-around;
+    align-content: center;
+}
+.proposal__text h3{
+    font-size: clamp(1rem, 0.75rem + 1.3333vw, 2rem);
+}
+.proposal__img{
+    height: 100%;
+}
+.proposal__img img{
+    height: 100%;
+}
 
+
+
+.contact{
+    margin: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.contact__heading{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.contact__heading h2{
+    padding: 2px 5px;
+    background-color: #B9FF66;
+    border-radius: 5px;
+}
+.contact__heading p{
+    width: 25%;
+}
+
+.contact__form{
+    background-color: #f3f3f3;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 50px;
+    padding: 40px 0;
+}
+.contact__form  form{
+    width: 40%;
+    margin-left: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.contact__form form label[for="choice"]{
+    display: flex;
+    gap: 10px;
+}
+:where(.contact__form form) label:not(#choice-lbl){
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+#name, #email, #message{
+
+    padding: 15px 20px;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid #191a23;
+}
+#message{
+    height: 200px;
+    text-align: start;
+    resize: none;
+}
+#message::placeholder{
+    font-size: 1rem;
+}
+
+
+
+
+
+
+
+
+.contact__form__imagine{
+    width: 25%;
+}
+.contact__form__imagine img{
+    width: 100%;
+}
 
 
 
@@ -427,7 +519,40 @@ body {
 
 
     /* *Main */
+    .proposal__img{
+        display: none;
+    }
+    .proposal{
+        height: max-content;
+    }
+    .proposal__text{
+        width: 100%;
+        text-align: center;
+        padding: 30px;
+    }
 
+    .contact__form{
+        padding: 0;
+    }
+    .contact__heading{
+        flex-direction: column;
+        width: 100%;
+    }
+    .contact__heading p{
+        width: 100%;
+        text-align: center;
+    }
+    .contact__form__imagine{
+        display: none;
+    }
+    .contact__form form{
+        width: 100%;
+        margin: 0 auto;
+        padding: 40px;
+    }
+    .contact__form form .btn-click{
+        width: 100%;
+    }
 
 }
 
