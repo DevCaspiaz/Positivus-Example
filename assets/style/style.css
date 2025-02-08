@@ -100,10 +100,11 @@ body {
 
 
 
-
+.introduction{
+    padding: 40px;
+}
 .introduction, .proposal{
     margin-top: 5rem;
-    margin: 40px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -326,7 +327,7 @@ body {
 
 
 .proposal{
-    padding: 10px;
+    margin: 40px;
     background-color: #f3f3f3;
     border-radius: 15px;
     height: 300px;
